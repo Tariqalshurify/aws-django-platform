@@ -1,0 +1,36 @@
+# =============================================================
+# Terraform Variables - Copy this file to terraform.tfvars
+# and fill in your values
+# =============================================================
+# cp terraform.tfvars.example terraform.tfvars
+
+# AWS Region
+aws_region = "us-east-1"
+
+# Project name (used as prefix for all resources)
+project_name = "aws-django-platform"
+
+# Environment
+environment = "production"
+
+# EC2 instance type (t3.micro is free tier eligible)
+ec2_instance_type = "t3.micro"
+
+# Auto Scaling Group settings
+asg_min_size         = 2
+asg_max_size         = 6
+asg_desired_capacity = 2
+
+# RDS settings
+db_instance_class = "db.t3.micro"
+db_name           = "blogdb"
+db_username       = "blogadmin"
+
+# SENSITIVE - Set via environment variable or enter here:
+# export TF_VAR_db_password="YourStrongPassword123!"
+# export TF_VAR_django_secret_key="your-50-char-random-secret-key"
+db_password       = "CHANGE_ME_StrongPassword123!"
+django_secret_key = "CHANGE_ME_50_char_random_secret_key_here_change_this"
+
+# Email for CloudWatch alerts
+alert_email = "your-email@example.com"

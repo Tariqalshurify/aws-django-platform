@@ -1,0 +1,53 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Login - AWS Blog{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card rounded-3 shadow-sm">
+                <div class="card-header text-center py-4" style="background:#232f3e">
+                    <i class="fab fa-aws fa-3x" style="color:#FF9900"></i>
+                    <h4 class="mt-2 mb-0 text-white fw-bold">Sign In</h4>
+                    <small class="text-muted">AWS Blog Platform</small>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% if form.errors %}
+                        <div class="alert alert-danger py-2">
+                            <i class="fas fa-exclamation-circle me-2"></i>Invalid username or password.
+                        </div>
+                        {% endif %}
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text" style="background:#f8f9fa">
+                                    <i class="fas fa-user text-muted"></i>
+                                </span>
+                                <input type="text" name="username" class="form-control" autofocus required
+                                       placeholder="Enter your username">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text" style="background:#f8f9fa">
+                                    <i class="fas fa-lock text-muted"></i>
+                                </span>
+                                <input type="password" name="password" class="form-control" required
+                                       placeholder="Enter your password">
+                            </div>
+                        </div>
+                        <input type="hidden" name="next" value="{{ next }}">
+                        <button type="submit" class="btn btn-aws w-100 py-2 fw-semibold">
+                            <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

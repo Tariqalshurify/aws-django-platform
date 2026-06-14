@@ -1,0 +1,94 @@
+# ────────────────────────────────────────────────────────────
+# SECRETS — never commit these
+# ────────────────────────────────────────────────────────────
+*.tfvars
+!*.tfvars.example
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.yaml
+secrets.json
+credentials
+.aws/credentials
+
+# ────────────────────────────────────────────────────────────
+# Terraform
+# ────────────────────────────────────────────────────────────
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+.terraform.lock.hcl
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# ────────────────────────────────────────────────────────────
+# Python / Django
+# ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ────────────────────────────────────────────────────────────
+# Node
+# ────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ────────────────────────────────────────────────────────────
+# IDE / AI tools / OS
+# ────────────────────────────────────────────────────────────
+.vscode/
+.claude/
+.cursor/
+.aider*
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ────────────────────────────────────────────────────────────
+# Build / generated artifacts
+# ────────────────────────────────────────────────────────────
+*.log
+*.zip
+*.tar.gz
+AWS_Challenge_Submission.pdf
+AWS_Challenge_Submission.docx
+terraform_code.zip
