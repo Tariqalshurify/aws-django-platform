@@ -11,27 +11,9 @@ A production-grade, highly-available Django web application deployed on AWS usin
 
 ## Architecture
 
-```
-Internet → WAF v2 → Application Load Balancer
-                          │
-                ┌─────────┴─────────┐
-                ▼                   ▼
-          us-east-1a            us-east-1b
-        ┌────────────┐        ┌────────────┐
-        │ Public SN  │        │ Public SN  │
-        │ NAT GW +EIP│        │ NAT GW +EIP│
-        └────────────┘        └────────────┘
-        ┌────────────┐        ┌────────────┐
-        │ Private SN │        │ Private SN │
-        │ EC2(Django)│◄──ASG──│ EC2(Django)│
-        └────────────┘        └────────────┘
-        ┌────────────┐        ┌────────────┐
-        │  DB SN     │        │  DB SN     │
-        │ RDS Primary│        │ Subnet Grp │
-        └────────────┘        └────────────┘
-```
+![Architecture Diagram](architecture.png)
 
-A full architecture diagram is available in [`architecture.drawio`](architecture.drawio) (open at [diagrams.net](https://app.diagrams.net)).
+The diagram source is in [`architecture.drawio`](architecture.drawio) — open with [diagrams.net](https://app.diagrams.net) to edit.
 
 ---
 
